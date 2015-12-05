@@ -56,14 +56,14 @@ $(document).ready(function() {
 
     // Check diagonals
     var diag1 = [ game[0][0], game[1][1], game[2][2] ].reduce((a,b) => a + b);
-    var diag2 = [ game[0][2], game[1][1], game[2][0] ].reduce((a,b) => a + b);
-    
     if (diag1 === 0 || diag1 === 3) {
       colorize( ("#b00"), ("#b11"), ("#b22") );
       alert("Winner is " + (diag1 === 0 ? "O" : "X") + " on diagonal from top left ");
       return true
     }
-    else if (diag2 === 0 || diag2 === 3) {
+
+    var diag2 = [ game[0][2], game[1][1], game[2][0] ].reduce((a,b) => a + b);
+    if (diag2 === 0 || diag2 === 3) {
       colorize( ("#b02"), ("#b11"), ("#b20") );
       alert("Winner is " + (diag2 === 0 ? "O" : "X") + " on diagonal from top right");
       return true
