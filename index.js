@@ -95,8 +95,6 @@
     document.getElementById('SPA')
   );
 
-  console.log("hi")
-
   function isWinner(game) {
     for (var i = 0; i < 3; i++) {
       // Check all collumns:
