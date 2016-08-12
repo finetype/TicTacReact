@@ -98,14 +98,14 @@
   function isWinner(game) {
     for (var i = 0; i < 3; i++) {
       // Check all collumns:
-      var col = [ game[0][i], game[1][i], game[2][i] ].reduce((a,b) => a + b);
+      var col = (game[0][i] + game[1][i] + game[2][i]);
       if (col === -3 || col === 3) {
         alert("Winner is " + (col === 3 ? "X" : "O") + " on col " + (i+1) );
         return true;
       }
       
       // Check all rows:
-      var row = [ game[i][0], game[i][1], game[i][2] ].reduce((a,b) => a + b);
+      var row = (game[i][0] + game[i][1] + game[i][2]);
       if (row === -3 || row === 3) {
         alert("Winner is " + (row === 3 ? "X" : "O") + " on row " + (i+1) );
         return true;
@@ -113,13 +113,13 @@
     }
 
     // Check diagonals
-    var diag1 = [ game[0][0], game[1][1], game[2][2] ].reduce((a,b) => a + b);
+    var diag1 = (game[0][0] + game[1][1] + game[2][2]);
     if (diag1 === -3 || diag1 === 3) {
       alert("Winner is " + (diag1 === 3 ? "X" : "O") + " on diagonal from top left ");
       return true;
     }
 
-    var diag2 = [ game[0][2], game[1][1], game[2][0] ].reduce((a,b) => a + b);
+    var diag2 = (game[0][2] + game[1][1] + game[2][0]);
     if (diag2 === -3 || diag2 === 3) {
       alert("Winner is " + (diag2 === 3 ? "X" : "O") + " on diagonal from top right");
       return true;
